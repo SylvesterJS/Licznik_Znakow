@@ -6,18 +6,17 @@ const txt = document.querySelector("textarea");
     })
     
 const maxLength = 120;
-const warnLength = 7;
+const warnLength = maxLength - 7;
     
     function textCounter(e){
         let count = txt.value.length;
-        console.log(count);
         if(count > maxLength){
             txt.value = txt.value.substring(0, maxLength);
         }
         if(count > warnLength){
             output.classList.add("red");
-        }else{
+        }else {
             output.classList.remove("red");
         }
-        output.innerHTML = "Pozostało " + (maxLength - count) + " znaków";
+        output.innerHTML = `Pozostało ${maxLength - count} znaków`;
     }
